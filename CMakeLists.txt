@@ -104,7 +104,6 @@ include(cmake/PackageProject.cmake)
 # we know we want to ship
 AofCode_Cpp_package_project(
   TARGETS
-  intro
   AofCode_Cpp_options
   AofCode_Cpp_warnings
   # FIXME: this does not work! CK

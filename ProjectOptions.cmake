@@ -19,7 +19,7 @@ macro(AofCode_Cpp_supports_sanitizers)
 endmacro()
 
 macro(AofCode_Cpp_setup_options)
-  option(AofCode_Cpp_ENABLE_HARDENING "Enable hardening" ON)
+  option(AofCode_Cpp_ENABLE_HARDENING "Enable hardening" OFF)
   option(AofCode_Cpp_ENABLE_COVERAGE "Enable coverage reporting" OFF)
   cmake_dependent_option(
     AofCode_Cpp_ENABLE_GLOBAL_HARDENING
