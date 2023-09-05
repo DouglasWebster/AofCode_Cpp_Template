@@ -1,4 +1,4 @@
-#include <AofCode_Cpp/sample_library.hpp>
+#include <AofCode_Cpp/aoc_library.hpp>
 
 int factorial(int input) noexcept
 {

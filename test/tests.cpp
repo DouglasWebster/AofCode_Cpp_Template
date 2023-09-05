@@ -1,7 +1,7 @@
 #include <catch2/catch_test_macros.hpp>
 
 
-#include <AofCode_Cpp/sample_library.hpp>
+#include <AofCode_Cpp/aoc_library.hpp>
 
 
 TEST_CASE("Factorials are computed", "[factorial]")
