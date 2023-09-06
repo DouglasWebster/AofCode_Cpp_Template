@@ -1,6 +1,6 @@
 #include <AofCode_Cpp/aoc_library.hpp>
 
-int factorial(int input) noexcept
+int AoCLib::factorial(int input) noexcept
 {
   int result = 1;
 
