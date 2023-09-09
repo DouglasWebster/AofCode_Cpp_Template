@@ -50,13 +50,13 @@ endif()
 catch_discover_tests(
   tests
   TEST_PREFIX
-  "unittests."
+  "AoCLib unit tests: "
   REPORTER
   XML
   OUTPUT_DIR
   .
   OUTPUT_PREFIX
-  "unittests."
+  "AoCLib unit tests: "
   OUTPUT_SUFFIX
   .xml)
 
