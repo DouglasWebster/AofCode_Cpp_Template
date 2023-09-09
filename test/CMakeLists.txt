@@ -106,3 +106,4 @@ catch_discover_tests(
 #   OUTPUT_SUFFIX
 #   .xml)
 
+add_subdirectory(tests_2022)
