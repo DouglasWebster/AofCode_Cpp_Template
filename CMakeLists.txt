@@ -118,3 +118,7 @@ set(CPACK_PACKAGE_FILE_NAME
 )
 
 include(CPack)
+
+include(cmake/Doxygen.cmake)
+AofCode_Cpp_enable_doxygen("")
+
