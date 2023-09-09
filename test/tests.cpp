@@ -1,14 +1,14 @@
 #include <catch2/catch_test_macros.hpp>
+#include <catch2/matchers/catch_matchers_all.hpp>
 
 
 #include <AofCode_Cpp/aoc_library.hpp>
 
 
-TEST_CASE("Factorials are computed", "[factorial]")
+TEST_CASE("Vectorise integer data", "[vectorise]")
 {
-  REQUIRE(AoCLib::factorial(0) == 1);
-  REQUIRE(AoCLib::factorial(1) == 1);
-  REQUIRE(AoCLib::factorial(2) == 2);
-  REQUIRE(AoCLib::factorial(3) == 6);
-  REQUIRE(AoCLib::factorial(10) == 3628800);
+  using Catch::Matchers::IsEmpty;
+  auto empty_vector = std::vector<std::vector<int>>{};
+
+  REQUIRE_THAT(AoCLib::vectorise_int_data(""), IsEmpty());
 }
