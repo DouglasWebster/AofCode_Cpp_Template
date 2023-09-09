@@ -1,13 +1,9 @@
 #include <AofCode_Cpp/aoc_library.hpp>
 
-int AoCLib::factorial(int input) noexcept
+AoCLib::int_data AoCLib::vectorise_int_data(const std::string &file_name) noexcept
 {
-  int result = 1;
+  int_data data{ { 1, 2, 3 } };
+  if (file_name.empty()) { return int_data{}; }
 
-  while (input > 0) {
-    result *= input;
-    --input;
-  }
-
-  return result;
+  return data;
 }
