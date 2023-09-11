@@ -75,10 +75,10 @@ CMake uses the environment variables CC and CXX to decide which compiler to use.
 				refreshenv
 
 
-  - Temporarily (only for the current shell):
+  	- Temporarily (only for the current shell):
 
-			$Env:CC="clang.exe"
-			$Env:CXX="clang++.exe"
+		$Env:CC="clang.exe"
+		$Env:CXX="clang++.exe"
 
 </details>
 
