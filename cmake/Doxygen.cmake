@@ -41,7 +41,7 @@ function(AofCode_Cpp_enable_doxygen DOXYGEN_THEME)
                                         "${_doxygen_theme_SOURCE_DIR}/doxygen-awesome-sidebar-only.css"
                                         "${_doxygen_theme_SOURCE_DIR}/doxygen-awesome-sidebar-only-darkmode-toggle.css")
       set(DOXYGEN_HTML_EXTRA_FILES "${_doxygen_theme_SOURCE_DIR}/doxygen-awesome-darkmode-toggle.js")
-      set(DOXYGEN_HTML_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/header.html")
+      set(DOXYGEN_HTML_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/configured_files/header.html")
 
     endif()
   else()
