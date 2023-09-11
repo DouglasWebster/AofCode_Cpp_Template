@@ -21,7 +21,7 @@ function(AofCode_Cpp_enable_doxygen DOXYGEN_THEME)
   # If not specified, exclude the vcpkg files and the files CMake downloads under _deps (like project_options)
   if(NOT DOXYGEN_EXCLUDE_PATTERNS)
     set(DOXYGEN_EXCLUDE_PATTERNS "${CMAKE_CURRENT_BINARY_DIR}/vcpkg_installed/*" "${CMAKE_CURRENT_BINARY_DIR}/_deps/*")
-  endif()
+      endif()
 
   if("${DOXYGEN_THEME}" STREQUAL "")
     set(DOXYGEN_THEME "awesome-sidebar")
@@ -31,14 +31,18 @@ function(AofCode_Cpp_enable_doxygen DOXYGEN_THEME)
     # use a modern doxygen theme
     # https://github.com/jothepro/doxygen-awesome-css v1.6.1
     FetchContent_Declare(_doxygen_theme
-                         URL https://github.com/jothepro/doxygen-awesome-css/archive/refs/tags/v1.6.1.zip)
+                         URL https://github.com/jothepro/doxygen-awesome-css/archive/refs/tags/v2.2.1.zip)
     FetchContent_MakeAvailable(_doxygen_theme)
     if("${DOXYGEN_THEME}" STREQUAL "awesome" OR "${DOXYGEN_THEME}" STREQUAL "awesome-sidebar")
       set(DOXYGEN_HTML_EXTRA_STYLESHEET "${_doxygen_theme_SOURCE_DIR}/doxygen-awesome.css")
     endif()
     if("${DOXYGEN_THEME}" STREQUAL "awesome-sidebar")
       set(DOXYGEN_HTML_EXTRA_STYLESHEET ${DOXYGEN_HTML_EXTRA_STYLESHEET}
-                                        "${_doxygen_theme_SOURCE_DIR}/doxygen-awesome-sidebar-only.css")
+                                        "${_doxygen_theme_SOURCE_DIR}/doxygen-awesome-sidebar-only.css"
+                                        "${_doxygen_theme_SOURCE_DIR}/doxygen-awesome-sidebar-only-darkmode-toggle.css")
+      set(DOXYGEN_HTML_EXTRA_FILES "${_doxygen_theme_SOURCE_DIR}/doxygen-awesome-darkmode-toggle.js")
+      set(DOXYGEN_HTML_HEADER "${CMAKE_CURRENT_SOURCE_DIR}/header.html")
+
     endif()
   else()
     # use the original doxygen theme
