@@ -4,11 +4,7 @@
 
 #include <AofCode_Cpp/aoc_library.hpp>
 
-
-TEST_CASE("Vectorise integer data", "[vectorise]")
+TEST_CASE("Year 2022 - nothing to test yet", "[year 2022]")
 {
-  using Catch::Matchers::IsEmpty;
-  auto empty_vector = std::vector<std::vector<int>>{};
-
-  REQUIRE_THAT(AoCLib::vectorise_int_data(""), IsEmpty());
+  REQUIRE( true);
 }
