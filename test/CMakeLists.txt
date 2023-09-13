@@ -29,9 +29,9 @@ add_test(NAME cli.has_help COMMAND cli_test --help)
 add_test(NAME cli.version_matches COMMAND cli_test --version)
 set_tests_properties(cli.version_matches PROPERTIES PASS_REGULAR_EXPRESSION "${PROJECT_VERSION}")
 
-add_executable(AoCLib AoCLib_tests.cpp)
+add_executable(AoCLib_test AoCLib_tests.cpp)
 target_link_libraries(
-  AoCLib
+  AoCLib_test
   PRIVATE AofCode_Cpp::AofCode_Cpp_warnings
           AofCode_Cpp::AofCode_Cpp_options
           AofCode_Cpp::aoc_library
@@ -48,7 +48,7 @@ endif()
 # automatically discover tests that are defined in catch based test files you can modify the unittests. Set TEST_PREFIX
 # to whatever you want, or use different for different binaries
 catch_discover_tests(
-  AoCLib
+  AoCLib_test
   TEST_PREFIX
   "AoCLib unit tests: "
   REPORTER
