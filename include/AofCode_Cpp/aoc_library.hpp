@@ -1,15 +1,26 @@
-#ifndef AOC_LIBRARY_HPP
-#define AOC_LIBRARY_HPP
+#pragma once
 
 #include <AofCode_Cpp/aoc_library_export.hpp>
 
-[[nodiscard]] AOC_LIBRARY_EXPORT int factorial(int) noexcept;
+#include <iostream>
+#include <utility>
+#include <vector>
+#include <string>
 
-[[nodiscard]] constexpr int factorial_constexpr(int input) noexcept
-{
-  if (input == 0) { return 1; }
 
-  return input * factorial_constexpr(input - 1);
-}
+namespace AoCLib {
 
-#endif
+using int_data = std::vector<std::vector<int>>;
+
+/**
+ * @brief vectorise each line of the input into a vector of integers.
+ * 
+ * @param file_name the path to the file containing the raw data
+ * @return int_data a std::vector<std::vector<int>>
+ * 
+ * @note The function returns and empty vector if it is unable to open the file.
+ */
+[[nodiscard]] int_data vectorise_int_data(const std::string &file_name) noexcept;
+
+
+}// namespace AoCLib
