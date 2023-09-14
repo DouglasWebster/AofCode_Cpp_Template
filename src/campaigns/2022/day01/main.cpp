@@ -5,9 +5,9 @@
 int main()
 {
   std::cout << "Advent of Code " << AofCode_Cpp::cmake::campaign_year << " " << AofCode_Cpp::cmake::campaign_day
-            << '\n';
-  std::cout << "Part 1 solution:\n";
-  std::cout << "Part 2 solution:\n";
+            << std::endl;
+  std::cout << "Part 1 solution:" << std::endl;
+  std::cout << "Part 2 solution:" << std::endl;
 
   return 0;
 }
