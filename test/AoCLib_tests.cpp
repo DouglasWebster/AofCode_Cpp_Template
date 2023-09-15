@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/matchers/catch_matchers_container_properties.hpp>
 #include <catch2/matchers/catch_matchers_vector.hpp>
@@ -20,7 +22,7 @@ TEST_CASE(" Vectorise integer data", "[vectorise]")
   auto empty_vector = std::vector<std::vector<int>>{};
 
   std::stringstream tmp_file;
-  tmp_file << tmpnam(nullptr) << "_AoCLibTest.txt";// NOLINT: This is not thread safe!
+  tmp_file << std::tmpnam(nullptr) << "_AoCLibTest.txt";// NOLINT: This is not thread safe!
 
   SECTION("an empty or invalid file name returns and empty vector ")
   {
