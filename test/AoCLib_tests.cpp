@@ -13,10 +13,6 @@
 #include <memory>
 #include <sstream>
 
-#ifdef MSVC
-#pragma warning(disable: 4994) //_CRT_SECURE_NO_WARNINGS
-#endif
-
 
 TEST_CASE(" Vectorise integer data", "[vectorise]")
 {
@@ -24,7 +20,10 @@ TEST_CASE(" Vectorise integer data", "[vectorise]")
   auto empty_vector = std::vector<std::vector<int>>{};
 
   std::stringstream tmp_file;
-  tmp_file << std::tmpnam(nullptr) << "_AoCLibTest.txt"; // NOLINT: This is not thread safe!
+  #ifdef MSVC
+  #pragma warning(suppress: 4996)  // required to suppress msvc deprecation warning.
+  #endif
+  tmp_file << std::tmpnam(nullptr) << "_AoCLibTest.txt";// NOLINT: This is not thread safe!
 
   SECTION("an empty or invalid file name returns and empty vector ")
   {
