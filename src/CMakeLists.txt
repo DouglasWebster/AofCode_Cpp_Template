@@ -1,2 +1,3 @@
 add_subdirectory(cli_test)
-add_subdirectory(sample_library)
+add_subdirectory(aoc_library)
+add_subdirectory(campaigns)
