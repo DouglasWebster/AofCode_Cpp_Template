@@ -13,9 +13,14 @@ foreach(day_no RANGE 1 25)
 
     if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${dir_name}/")
         message("   Found ${dir_name}")
+        if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/${dir_name}/CMakeLists.txt")
+            message("Creating CMakeLists.txt file for this days solution.")
+            configure_file(
+                "${CMAKE_SOURCE_DIR}/configured_files/CMakeLists.txt.in" 
+                "${CMAKE_CURRENT_SOURCE_DIR}/${dir_name}/CMakeLists.txt"
+                COPYONLY)
+        endif()
         add_subdirectory(${dir_name})
-    else()
-        message("   Not found ${dir_name}")
     endif()
     
 endforeach()
