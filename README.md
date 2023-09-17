@@ -83,6 +83,6 @@ The above sequence means that, once a campaign year folder has been set up and t
 
 Of course, once the CMakeLists.txt files are created then the user is free to re-configure them to their individual needs.
 
-I realise that this is probably overkill for coding Advent of Code problems and a simple command line instruction would probably be sufficient. But maybe for some of you, like me, it may help a little way in understanding how the [cpp-best-practices](https://github.com/cpp-best-practices/cmake_template) cpp-best-practices template works.
+I realise that this is probably overkill for coding Advent of Code problems and a simple command line instruction would probably be sufficient. But maybe for some of you, like me, it may help a little way in understanding how the [cpp-best-practices](https://github.com/cpp-best-practices/cmake_template) template works.
 
 Happy coding and I hope this at least takes some of the burden of setting up the build system away.
