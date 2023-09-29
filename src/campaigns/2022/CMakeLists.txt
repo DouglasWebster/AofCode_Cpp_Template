@@ -18,7 +18,7 @@ foreach(day_no RANGE 1 25)
             configure_file(
                 "${CMAKE_SOURCE_DIR}/configured_files/CMakeLists.txt.in" 
                 "${CMAKE_CURRENT_SOURCE_DIR}/${dir_name}/CMakeLists.txt"
-                COPYONLY)
+                @ONLY)
         endif()
         add_subdirectory(${dir_name})
     endif()
