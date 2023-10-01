@@ -35,3 +35,5 @@ target_link_libraries(
           AofCode_Cpp::aoc_library
 )
 
+target_compile_definitions(@parent_directory@-@dir_name@ PRIVATE CURRENT_LIST_DIR="${CMAKE_CURRENT_LIST_DIR}")
+
