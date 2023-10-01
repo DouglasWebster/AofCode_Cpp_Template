@@ -86,4 +86,12 @@ Of course, once the CMakeLists.txt files are created then the user is free to re
 
 I realise that this is probably overkill for coding Advent of Code problems and a simple command line instruction would probably be sufficient. But maybe for some of you, like me, it may help a little way in understanding how the [cpp-best-practices](https://github.com/cpp-best-practices/cmake_template) template works.
 
-Happy coding and I hope this at least takes some of the burden of setting up the build system away.
+In order to give an example of the final use of the template I have included a 2022 campaign day 1 puzzle solution (sorry if this is a spoiler!) along with some library code.  Both the library code and the day 1 solution have test suites in the testing folder.  
+
+Again, this solution along with the tests are probably overkill for the task they solve.  I did find, however, when putting it together that I could not just paste in my old solution as clang-tidy really didn't like my cavalier coding!  If you leave the default setting for the compiler then you will at least be encouraged to write modern c++! 
+
+> [!NOTE]
+> The project expects to find the relevant days puzzle data file in the same directory as the days code.  The path to this file is generated in the CMakeLists.txt file.  If you do not want to put it there then you may need to
+correct the CMakeLists.txt.in file in the configured_files directory.
+
+Happy coding and I hope this at least takes away some of the burden of setting up the build system.
