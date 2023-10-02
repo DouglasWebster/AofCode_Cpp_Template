@@ -60,7 +60,10 @@ From the original cmake_template I have deleted the docker functionality as it i
 
 ## Using this template
 
-The source folder is set up with the three directories.
+#### *src* folder
+
+
+The source folder is set up with the three sub folders:
 
  * **cli_test** - This is a small program that the template uses to ensure that Catch2 testing is functioning correctly.
  * **aoc_library** - This holds the code for generating library files.
@@ -79,8 +82,13 @@ The source folder is set up with the three directories.
  2. checks if the folder has a header file named *day_xx.cpp* where *xx* is the day no. If not it creates the header file from the day_details.cpp.in file in the configured_files folder.
  3. checks if there is a main.cpp file.  If not it creates it from day_main.cpp.in in the configured_files folder, setting the include header file to day_xx.hpp.
  4.  sets the executable to **yyyy**-day**dd** where *yyyy* is the campaign year and *dd* is the day no and sets main.cpp as the initial source file.
+
+ #### *test* folder
+
+ The test folder has just the one sub folder - campaigns.  Like the src folder it holds the yearly campaigns daily test files.  As with the src folder if you start a new campaign year folder then copy the CMakeLists.txt file from a previous year into the new folder.  When triggered it will create any a CMakeLists.txt file in any dayXX folder that doesn't already have one.  This will then create a Catch2 test file with reference to the relevant puzzle day.  The test file has a single test that fails.
  
-The above sequence means that, once a campaign year folder has been set up and the default CMakeLists.txt file copied into it, all that is necessary to start a new problem day is to create that days folder.  If it follows the naming convention then doing a CMake clean reconfigure will populate the new folder with the basic starting files and have the executable registered with CMake.
+ ----
+The above sequence means that, once a campaign year folder has been set up in both the src and test directories and the default CMakeLists.txt files copied into them, all that is necessary to start a new problem day is to create that days folder in the campaign years.  If it follows the naming convention then doing a CMake clean reconfigure will populate the new folders with the basic starting files and have the executable registered with CMake.
 
 Of course, once the CMakeLists.txt files are created then the user is free to re-configure them to their individual needs.
 
